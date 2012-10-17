@@ -2,5 +2,5 @@
 
 ## Contents
 
-* [pca](drift-multicomp/pca)
-* [cpca](drift-multicomp/cpca)
+* [pca](drift-multicomp/tree/master/pca)
+* [cpca](drift-multicomp/tree/master/cpca)
