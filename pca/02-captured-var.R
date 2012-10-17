@@ -2,7 +2,7 @@
 library(pls)
 
 ### parameters
-pc <- 1:2 # let's comput variance for just first 2 PCs
+pc <- 1:2 # let's compute variance for just first 2 PCs
 
 ### data
 data(iris)
@@ -15,8 +15,8 @@ mod <- prcomp(X, center = TRUE, scale = FALSE)
 smod <- summary(mod)
 var.pls <- smod$importance["Proportion of Variance", pc]
 
-### PCA numbers by manual computation
-X <- as.matrix(X) # needed to be a matrix
+### PCA matricies
+X <- as.matrix(X) # matrix of scores (needed to be a matrix)
 E <- as.matrix(mod$rotation[, pc]) # `E` is a sub-space defined by PCs `pc`
 
 # scale 'X' according to the model `mod`
