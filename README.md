@@ -2,5 +2,5 @@
 
 ## Contents
 
-* [pca](pca)
-* [cpca](cpca)
+* [pca](drift-multicomp/pca)
+* [cpca](drift-multicomp/cpca)
