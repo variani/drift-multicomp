@@ -1,6 +1,6 @@
 # Multi-component methods on drift counteraction
 
-## R code examples
+## Contents
 
-* PCA
-* CPCA
+* [pca](pca)
+* [cpca](cpca)
