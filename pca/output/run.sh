@@ -32,8 +32,5 @@ R -q -e 'library(knitr);knit("output.Rmd")'
 echo " * pandoc: md -> pdf"
 pandoc -N $name.md --toc -o $name.pdf
 
-echo " * cleaning: Rmd, md, log, figure/"
-rm -rf *.Rmd *.md *.log figure/
-
 echo "* finish: ls"
 echo $(ls)s
