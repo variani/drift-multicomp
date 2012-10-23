@@ -3,6 +3,8 @@
 library(JADE)
 library(abind)
 
+library(plyr)
+
 ### run example in help section `?djd`
 set.seed(1) # for reproducibility of results
 

@@ -1,6 +1,7 @@
 library(JADE)
 library(abind)
 
+library(plyr)
 library(ggplot2)
 library(grid)
 
