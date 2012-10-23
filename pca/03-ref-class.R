@@ -80,8 +80,10 @@ X <- iris[, 1:4]
 Y <- iris[, 5]
 
 X <- scale(X, center = TRUE, scale = TRUE) # See `attributes(X)`
+
 M <- prcomp(X, center = FALSE, scale = FALSE)
 T <- M$x
+P <- M$rotation
 
 p7 <- qplot(PC1, PC2, data = as.data.frame(T), color = Y) + ggtitle("PCA on Original Data")
 p7
@@ -93,6 +95,30 @@ Xr <- scale(Xr, center = TRUE, scale = FALSE)
 Mr <- prcomp(Xr, center = FALSE, scale = FALSE) 
 
 E <- Mr$rotation 
+colnames(E) <- paste("CPC", 1:ncol(E), sep = "")
+
+# closer look to `E`
+E
+
+var.projected <- apply(E, 2, function(e) sum((X %*% e)^2))
+var.total <- sum(apply(X, 2, function(x) sum((x)^2)))
+
+var.projected / var.total
+
+# plot `E`
+Et <- t(E) %*% P # `E` in space of model `M`, i.e. scores of `E`
+
+# select just first two CPC
+Et <- Et[1:2, ]
+
+p7 + geom_segment(data = as.data.frame(Et), aes(x = 0, xend = PC1, 
+    y = 0, yend = PC2, color = rownames(Et)), arrow = arrow())
+
+# let's replot to ensure that commom components CPC1 and CPC2 are orhtogonal
+p2 + xlim(c(-4, 4)) + ylim(c(-4, 4)) + theme(legend.position = "none")
+
+
+# select just first PC1
 E1 <- E[, 1, drop = FALSE]
 
 Xc <- X - (X %*% E1) %*% t(E1)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#dirs=("pca" "cpca")
-dirs=("cpca")
+dirs=("pca" "cpca")
+#dirs=("cpca")
 
 dir_out="output"
 name="output"
