@@ -41,6 +41,7 @@ T <- M$x
 P <- M$rotation
 
 p1 <- qplot(PC1, PC2, data = as.data.frame(T), color = Y) + ggtitle("PCA on Original Data")
+p1
 
 Et <- t(E) %*% P # `E` in space of model `M`, i.e. scores of `E`
 
