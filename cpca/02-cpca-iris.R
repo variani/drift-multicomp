@@ -1,6 +1,9 @@
 library(JADE)
 library(abind)
 
+library(ggplot2)
+library(grid)
+
 ### data
 data(iris)
 
@@ -13,40 +16,31 @@ Y <- iris[, 5]
 cor(X)
 cor(scale(X))
 
+# scale data
+X <- scale(X, center = TRUE, scale = TRUE) # See `attributes(X)`
+
 # compute corr. matricies `C`
 names(cbind(X, Y))
 
-C <- daply(cbind(X, Y), "Y", function(x) cor(x[, -ncol(x)]))
+C <- daply(data.frame(X, Y), "Y", function(x) cor(x[, -ncol(x)]))
 dimnames(C) # order of dimensions is not the same as `djd` requires
 
 C <- aperm(C, c(2, 3, 1)) # put the 1st dimension to the end
 dimnames(C)
 
-stop()
-# See correlations
+P <- djd(C) 
+rownames(P) <- colnames(X)
+colnames(P) <- paste("CPC", 1:ncol(P), sep = "")
+P
 
-X1 <- t(U) %*% D1 %*% U
-X2 <- t(U) %*% D2 %*% U
-X3 <- t(U) %*% D3 %*% U
-X4 <- t(U) %*% D4 %*% U
+### plot results
+# PCA model
+M <- prcomp(X, center = FALSE, scale = FALSE)
+T <- M$x
 
-# check matrices `X1` and `X2` commute
-X1 %*% X2
-X2 %*% X1
-
-# `X1` and `X2` commute, as their product is like `D2 %*% D1` (D1, D2 are diagonal)
-D1 %*% D2
-D2 %*% D1
-
-# let's start Joint Diagonalization
-
-dim(X) # should be a 3D array
-
-W <- djd(X) 
-# W <- djd(X, r = 1)
-# W <- djd(X, G = "l")
-
-# Common PC in weight matrix `W` are exactly vectors in transformation matirx `U` (used to generate X1, X2, ...)
-round(U %*% W, 4) # should be a signed permutation matrix if W1 is correct.
+p1 <- qplot(Sepal.Length, Sepal.Width, data = as.data.frame(X), color = Y) +
+  geom_segment(data = as.data.frame(t(P)), aes(x = 0, xend = Sepal.Length, 
+    y = 0, yend = Sepal.Width, color = colnames(P)), arrow = arrow())
+p1
 
 

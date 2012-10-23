@@ -111,6 +111,9 @@ W &lt;-<span class="st"> </span><span class="kw">djd</span>(X)
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(JADE)
 <span class="kw">library</span>(abind)
 
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(grid)
+
 ### data
 <span class="kw">data</span>(iris)
 
@@ -129,11 +132,14 @@ Y &lt;-<span class="st"> </span>iris[, <span class="dv">5</span>]
 ## Sepal.Length       1.0000     -0.1176
 ## Sepal.Width       -0.1176      1.0000</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># scale data</span>
+X &lt;-<span class="st"> </span><span class="kw">scale</span>(X, <span class="dt">center =</span> <span class="ot">TRUE</span>, <span class="dt">scale =</span> <span class="ot">TRUE</span>) <span class="co"># See `attributes(X)`</span>
+
 <span class="co"># compute corr. matricies `C`</span>
 <span class="kw">names</span>(<span class="kw">cbind</span>(X, Y))</code></pre>
-<pre><code>## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Y&quot;           </code></pre>
+<pre><code>## NULL</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">
-C &lt;-<span class="st"> </span><span class="kw">daply</span>(<span class="kw">cbind</span>(X, Y), <span class="st">&quot;Y&quot;</span>, function(x) <span class="kw">cor</span>(x[, -<span class="kw">ncol</span>(x)]))</code></pre>
+C &lt;-<span class="st"> </span><span class="kw">daply</span>(<span class="kw">data.frame</span>(X, Y), <span class="st">&quot;Y&quot;</span>, function(x) <span class="kw">cor</span>(x[, -<span class="kw">ncol</span>(x)]))</code></pre>
 <pre><code>## Error: could not find function &quot;daply&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dimnames</span>(C) <span class="co"># order of dimensions is not the same as `djd` requires</span></code></pre>
 <pre><code>## NULL</code></pre>
@@ -143,55 +149,26 @@ C &lt;-<span class="st"> </span><span class="kw">aperm</span>(C, <span class="kw
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dimnames</span>(C)</code></pre>
 <pre><code>## NULL</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">
-<span class="kw">stop</span>()</code></pre>
-<pre><code>## Error:</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># See correlations</span>
-
-X1 &lt;-<span class="st"> </span><span class="kw">t</span>(U) %*%<span class="st"> </span>D1 %*%<span class="st"> </span>U
-X2 &lt;-<span class="st"> </span><span class="kw">t</span>(U) %*%<span class="st"> </span>D2 %*%<span class="st"> </span>U
-X3 &lt;-<span class="st"> </span><span class="kw">t</span>(U) %*%<span class="st"> </span>D3 %*%<span class="st"> </span>U
-X4 &lt;-<span class="st"> </span><span class="kw">t</span>(U) %*%<span class="st"> </span>D4 %*%<span class="st"> </span>U
-
-<span class="co"># check matrices `X1` and `X2` commute</span>
-X1 %*%<span class="st"> </span>X2</code></pre>
-<pre><code>##          [,1]     [,2]     [,3]
-## [1,]  0.08436  0.01553 -0.04050
-## [2,]  0.01553  0.09137 -0.01765
-## [3,] -0.04050 -0.01765  0.08175</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">X2 %*%<span class="st"> </span>X1</code></pre>
-<pre><code>##          [,1]     [,2]     [,3]
-## [1,]  0.08436  0.01553 -0.04050
-## [2,]  0.01553  0.09137 -0.01765
-## [3,] -0.04050 -0.01765  0.08175</code></pre>
+P &lt;-<span class="st"> </span><span class="kw">djd</span>(C) </code></pre>
+<pre><code>## Error: object of type 'closure' is not subsettable</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(P) &lt;-<span class="st"> </span><span class="kw">colnames</span>(X)</code></pre>
+<pre><code>## Error: object 'P' not found</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(P) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;CPC&quot;</span>, <span class="dv">1</span>:<span class="kw">ncol</span>(P), <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</code></pre>
+<pre><code>## Error: object 'P' not found</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">P</code></pre>
+<pre><code>## Error: object 'P' not found</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># `X1` and `X2` commute, as their product is like `D2 %*% D1` (D1, D2 are diagonal)</span>
-D1 %*%<span class="st"> </span>D2</code></pre>
-<pre><code>##         [,1]    [,2]   [,3]
-## [1,] 0.04245 0.00000 0.0000
-## [2,] 0.00000 0.07912 0.0000
-## [3,] 0.00000 0.00000 0.1359</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">D2 %*%<span class="st"> </span>D1</code></pre>
-<pre><code>##         [,1]    [,2]   [,3]
-## [1,] 0.04245 0.00000 0.0000
-## [2,] 0.00000 0.07912 0.0000
-## [3,] 0.00000 0.00000 0.1359</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># let's start Joint Diagonalization</span>
+### plot results
+<span class="co"># PCA model</span>
+M &lt;-<span class="st"> </span><span class="kw">prcomp</span>(X, <span class="dt">center =</span> <span class="ot">FALSE</span>, <span class="dt">scale =</span> <span class="ot">FALSE</span>)
+T &lt;-<span class="st"> </span>M$x
 
-<span class="kw">dim</span>(X) <span class="co"># should be a 3D array</span></code></pre>
-<pre><code>## [1] 150   2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">
-W &lt;-<span class="st"> </span><span class="kw">djd</span>(X) </code></pre>
-<pre><code>## Error: non-square matrix in 'eigen'</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># W &lt;- djd(X, r = 1)</span>
-<span class="co"># W &lt;- djd(X, G = &quot;l&quot;)</span>
-
-<span class="co"># Common PC in weight matrix `W` are exactly vectors in transformation matirx `U` (used to generate X1, X2, ...)</span>
-<span class="kw">round</span>(U %*%<span class="st"> </span>W, <span class="dv">4</span>) <span class="co"># should be a signed permutation matrix if W1 is correct.</span></code></pre>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    0    0   -1
-## [2,]    1    0    0
-## [3,]    0    1    0</code></pre>
+p1 &lt;-<span class="st"> </span><span class="kw">qplot</span>(Sepal.Length, Sepal.Width, <span class="dt">data =</span> <span class="kw">as.data.frame</span>(X), <span class="dt">color =</span> Y) +
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">data =</span> <span class="kw">as.data.frame</span>(<span class="kw">t</span>(P)), <span class="kw">aes</span>(<span class="dt">x =</span> <span class="dv">0</span>, <span class="dt">xend =</span> Sepal.Length, 
+    <span class="dt">y =</span> <span class="dv">0</span>, <span class="dt">yend =</span> Sepal.Width, <span class="dt">color =</span> <span class="kw">colnames</span>(P)), <span class="dt">arrow =</span> <span class="kw">arrow</span>())</code></pre>
+<pre><code>## Error: object 'P' not found</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">p1</code></pre>
+<pre><code>## Error: object 'p1' not found</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"></code></pre>
 </body>
 </html>
