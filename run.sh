@@ -1,6 +1,8 @@
 #!/bin/bash
 
-dirs=("pca")
+#dirs=("pca" "cpca")
+dirs=("cpca")
+
 dir_out="output"
 name="output"
 file_Rmd="$name.Rmd"
@@ -20,8 +22,7 @@ opts_chunk$set(fig.path = "figure/", tidy = FALSE, dev = "svg")
 # upload images automatically? (identity/imgur_upload)
 opts_knit$set(upload.fun = identity)
 ```'
-
-for dir in $dirs ; do
+for dir in ${dirs[@]} ; do
   echo " dir: $dir"
   files=$(ls $dir | grep R | grep '^[0-9][0-9]-') # ) # R files like 01-script.R
 
