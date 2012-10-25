@@ -20,6 +20,7 @@ CPCA
 
 CPCA software
 * [R package JADE](http://cran.r-project.org/web/packages/JADE/index.html) by [Jean-François Cardoso](http://perso.telecom-paristech.fr/~cardoso/) et al.
+  * See example for function `djd` about commuting matrices in Reference manual [(pdf)](http://cran.r-project.org/web/packages/JADE/JADE.pdf).
 * [CPC](http://pages.uoregon.edu/pphil/programs/cpc/cpc.htm) (Common Principal Component Analysis Program) by [Patrick Phillips](http://pages.uoregon.edu/pphil/) et al.
   * Source code is not available, but some sample output files are interesting, e.g. [this](http://darkwing.uoregon.edu/~pphil/programs/cpc/data/vole.out).
   * See Section References, most dedicated to investigation of covariance structure in data.
