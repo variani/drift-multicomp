@@ -9,9 +9,9 @@
 
 Machine Olfaction
 
-* Gutierrez-Osuna, R. (2002). Pattern analysis for machine olfaction: a review. IEEE Sensors Journal, 2(3), 189–202. [link](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1021060&tag=1)
-* Artursson, T., Eklov, T., Lundstrom, I., Martensson, P., Sjostrom, M., & Holmberg, M. (2000). Drift correction for gas sensors using multivariate methods. Journal of Chemometrics, 14(5-6), 711–723. [link](http://onlinelibrary.wiley.com/doi/10.1002/1099-128X(200009/12)14:5/6%3C711::AID-CEM607%3E3.0.CO;2-4/abstract)
-* Gutierrez-osuna, R. (2003). Signal processing methods for drift compensation. [pdf](http://research.cse.tamu.edu/prism/lectures/talks/nose03.pdf)
+* Gutierrez-Osuna, R. (2002). Pattern analysis for machine olfaction: a review. IEEE Sensors Journal, 2(3), 189–202. [(link)](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1021060&tag=1)
+* Artursson, T., Eklov, T., Lundstrom, I., Martensson, P., Sjostrom, M., & Holmberg, M. (2000). Drift correction for gas sensors using multivariate methods. Journal of Chemometrics, 14(5-6), 711–723. [(http://onlinelibrary.wiley.com/)](http://onlinelibrary.wiley.com/)
+* Gutierrez-osuna, R. (2003). Signal processing methods for drift compensation. [(pdf)](http://research.cse.tamu.edu/prism/lectures/talks/nose03.pdf)
 
 CPCA
 
@@ -20,7 +20,7 @@ CPCA
 CPCA software
 * [R package JADE](http://cran.r-project.org/web/packages/JADE/index.html) by [Jean-François Cardoso](http://perso.telecom-paristech.fr/~cardoso/) et al.
 * [CPC](http://pages.uoregon.edu/pphil/programs/cpc/cpc.htm) (Common Principal Component Analysis Program) by [Patrick Phillips](http://pages.uoregon.edu/pphil/) et al.
-  * Source code is not available, but some sample output files are interesting, e.g. [output](http://darkwing.uoregon.edu/~pphil/programs/cpc/data/vole.out)
+  * Source code is not available, but some sample output files are interesting, e.g. [this](http://darkwing.uoregon.edu/~pphil/programs/cpc/data/vole.out).
   * See Section References, most dedicated to investigation of covariance structure in data.
 * [Matlab code](http://www.math.montana.edu/~rjboik/spectral/) for Spectral Models for Covariance Matrices by [Robert J. Boik](http://www.math.montana.edu/~rjboik/).
 
