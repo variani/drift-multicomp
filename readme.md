@@ -10,12 +10,12 @@
 Machine Olfaction
 
 * Gutierrez-Osuna, R. (2002). Pattern analysis for machine olfaction: a review. IEEE Sensors Journal, 2(3), 189–202. [(link)](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1021060&tag=1)
-* Artursson, T., Eklov, T., Lundstrom, I., Martensson, P., Sjostrom, M., & Holmberg, M. (2000). Drift correction for gas sensors using multivariate methods. Journal of Chemometrics, 14(5-6), 711–723. [(http://onlinelibrary.wiley.com/)](http://onlinelibrary.wiley.com/)
 * Gutierrez-osuna, R. (2003). Signal processing methods for drift compensation. [(pdf)](http://research.cse.tamu.edu/prism/lectures/talks/nose03.pdf)
+* Artursson, T., Eklov, T., Lundstrom, I., Martensson, P., Sjostrom, M., & Holmberg, M. (2000). Drift correction for gas sensors using multivariate methods. Journal of Chemometrics, 14(5-6), 711–723. [(http://onlinelibrary.wiley.com/)](http://onlinelibrary.wiley.com/)
+* Ziyatdinov, A., Marco, S., Chaudry, A., Persaud, K., Caminal, P., & Perera, A. (2010). Drift compensation of gas sensor array data by common principal component analysis. Sensors and Actuators B: Chemical, 146(2), 460–465. [(link)](http://www.sciencedirect.com/science/article/pii/S0925400509008995).
+* Flury, B. N. . (1984). Common Principal Components in K Groups. Journal of the American Statistical Association, 79(388), 892– 898. [(link)](http://www.jstor.org/stable/2288721).
+* Boik, B. R. J. (2002). Spectral models for covariance matrices. Biometrika, 159–182. [(link)](http://biomet.oxfordjournals.org/content/89/1/159.abstract).
 
-CPCA
-
-* Flury, B. N. . (1984). Common Principal Components in K Groups. Journal of the American Statistical Association, 79(388), 892– 898. [link](http://www.jstor.org/stable/2288721)
 
 CPCA software
 * [R package JADE](http://cran.r-project.org/web/packages/JADE/index.html) by [Jean-François Cardoso](http://perso.telecom-paristech.fr/~cardoso/) et al.
