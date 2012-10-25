@@ -5,6 +5,13 @@
 * [pca](drift-multicomp/tree/master/pca)
 * [cpca](drift-multicomp/tree/master/cpca)
 
+## References
+* Gutierrez-Osuna, R. (2002). Pattern analysis for machine olfaction: a review. IEEE Sensors Journal, 2(3), 189–202. [link](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1021060&tag=1)
+* Artursson, T., Eklov, T., Lundstrom, I., Martensson, P., Sjostrom, M., & Holmberg, M. (2000). Drift correction for gas sensors using multivariate methods. Journal of Chemometrics, 14(5-6), 711–723. [link](drift-multicomp/tree/master/pca)
+* Gutierrez-osuna, R. (2003). Signal processing methods for drift compensation. [pdf](http://research.cse.tamu.edu/prism/lectures/talks/nose03.pdf)
+
+
+
 ## Component-Correction results on iris data
 
 A subspace `E` (supposed to underline a subspace of common variance) was computed
