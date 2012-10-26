@@ -1,6 +1,13 @@
 # Multi-component methods on drift counteraction
 
-## Contents
+## About
+This project is about multi-variate methods on drift counteraction applied to gas sensor array data.
+Two methods of interest include component correction based on PCA of reference class (Artursson et al, 2000)
+and component correction based on CPCA (Common Principal Component Analysis) (Ziyatdinov et al., 2010).
+
+The main intention is to publish some basic R code and collect some references on the topic, available software and datasets.
+
+## R code
 
 * [pca](drift-multicomp/tree/master/pca)
 * [cpca](drift-multicomp/tree/master/cpca)
