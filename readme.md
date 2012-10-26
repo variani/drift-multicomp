@@ -7,6 +7,11 @@ and component correction based on CPCA (Common Principal Component Analysis) (Zi
 
 The main intention is to publish some basic R code and collect some references on the topic, available software and datasets.
 
+One of the project goals is to attempt to investigate multi-component approach to drift correction,
+when a drift-related sub-space of data has more than 1 principal components. 
+This work is within the framework of master thesis of Susana Albarracín at Instituto Tecnológico Metropolitano, Medellín
+entitled as *Metodología de selección de componentes principales comunes para representación y extracción de las derivas presentes en sensores de gas*.
+
 ## R code
 
 * [pca](drift-multicomp/tree/master/pca)
