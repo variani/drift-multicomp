@@ -17,6 +17,8 @@ entitled as *Metodología de selección de componentes principales comunes para 
 * [pca](drift-multicomp/tree/master/pca)
 * [cpca](drift-multicomp/tree/master/cpca)
 
+Output of R code in HTML format (self-contained) is on [output](drift-multicomp/tree/master/output).
+
 ## References
 
 Machine Olfaction
