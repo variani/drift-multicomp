@@ -27,6 +27,25 @@ CPCA software
 * [Matlab code](http://www.math.montana.edu/~rjboik/spectral/) for Spectral Models for Covariance Matrices by [Robert J. Boik](http://www.math.montana.edu/~rjboik/).
 
 
+CPCA datasets
+* [Gas Sensor Array Drift Dataset](http://archive.ics.uci.edu/ml/datasets/Gas+Sensor+Array+Drift+Dataset) at UCI Machine Learning Repository. Creator: Alexander Vergara.
+
+## Notation
+
+PCA model: `X = T P' + E`, where
+* `X` is data matrix.
+* `T` is matrix of scores.
+* `P` is matrix of loadings (`P'` is transpose of `P`). Columns of `P` are Principal Component vectors `PC1`, `PC2`, etc.
+* `E` is matrix of errors.
+
+Formula to covert data to scores: `T = X P`.
+
+CPCA model: `Hc: Li = V' Ci V`, where
+
+* `Hc` is hypothesis of common components.
+* `i` is the class index.
+* `V` is transformation matrix (like `P` in PCA model). Columns of `V` are Common Principal Component vectors `CPC1`, `CPC2`, etc.
+* `Ci` is covariance matrix of class `i`.
 
 ## Component-Correction results on iris data
 
