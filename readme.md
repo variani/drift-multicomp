@@ -92,7 +92,7 @@ Some basic information can be revealed looking at subspace matrix `E` and the ca
 * reshape: functions `melt` and others prepare data.frames for plotting by `ggplot2`.
 * grid: required by `ggplot` to draw arrows on graphics.
 
-To install the packages, run the following command in R terminal:
+To install the packages, e.g. `JADE`, run the following command in R terminal:
 ```
 install.packages("JADE")
 ```
