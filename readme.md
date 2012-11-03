@@ -5,15 +5,16 @@ This project is about multi-variate methods on drift counteraction applied to ga
 Two methods of interest include component correction based on PCA of reference class (Artursson et al, 2000)
 and component correction based on CPCA (Common Principal Component Analysis) (Ziyatdinov et al., 2010).
 
-The main intention is to publish some basic R code and collect some references on the topic, available software and datasets.
+The main intention is to publish some basic R code and collect some references on the topic, links to available software and datasets.
 
 One of the project goals is to attempt to investigate multi-component approach to drift correction,
 when a drift-related sub-space of data has more than one principal components. 
 This work is within the framework of master thesis of Susana Albarracín at Instituto Tecnológico Metropolitano, Medellín
 entitled as *Metodología de selección de componentes principales comunes para representación y extracción de las derivas presentes en sensores de gas*.
 
-## R code
+## Contents
 
+R code
 * [pca](drift-multicomp/tree/master/pca)
 * [cpca](drift-multicomp/tree/master/cpca)
 
