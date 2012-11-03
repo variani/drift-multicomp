@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#dirs=("pca" "cpca" "dataset-pamplona")
-dirs=("dataset-pamplona")
+dirs=("pca" "cpca" "dataset-pamplona")
+#dirs=("dataset-pamplona")
 
 dir_out="output"
 name="output"
@@ -42,6 +42,11 @@ for dir in ${dirs[@]} ; do
     echo "$pat" >> $file_Rmd
   done
 
+  echo "# R session info" >> $file_Rmd
+  echo "$pat{r sessionInfo}" >> $file_Rmd
+  echo "sessionInfo()" >> $file_Rmd
+  echo "$pat" >> $file_Rmd
+
   echo " * knitr: Rmd -> md"
   R -q -e 'library(knitr);knit("output.Rmd")'
 
@@ -51,7 +56,8 @@ for dir in ${dirs[@]} ; do
   $cmd
   
   echo " * clean"
-  rm -rf figure/ cache/ output.md output.Rmd
+  rm -rf figure/ cache/ output.md 
+  rm -rf output.Rmd
   
   echo " * ls"
   ls $dir_out/ | grep html
