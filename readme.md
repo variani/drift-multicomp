@@ -42,7 +42,7 @@ CPCA software
 * [Matlab code](http://www.math.montana.edu/~rjboik/spectral/) for Spectral Models for Covariance Matrices by [Robert J. Boik](http://www.math.montana.edu/~rjboik/).
 
 
-CPCA datasets
+Drift datasets
 * [Gas Sensor Array Drift Dataset](http://archive.ics.uci.edu/ml/datasets/Gas+Sensor+Array+Drift+Dataset) at UCI Machine Learning Repository. Creator: Alexander Vergara.
 
 ## Notation
