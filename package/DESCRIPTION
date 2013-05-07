@@ -1,0 +1,18 @@
+Package: GiveMeANamePlz
+Type: Package
+Title: GiveMeATitlePlz
+Version: 0.1
+Date: 2013-05-07
+Author: Susana Albarracín
+Maintainer: Susana Albarracín <susana@somewhere.com>
+Description: GiveMeADescriptionPlz
+License: GPL (>= 3)
+LazyData: yes
+LazyLoad: yes
+Depends:
+    methods,
+    caret,
+    plyr,
+    ggplot2,
+Suggests:
+    doMC
