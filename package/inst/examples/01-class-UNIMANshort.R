@@ -8,10 +8,13 @@ data(UNIMANshort)
 X <- UNIMANshort$dat[, sensors]
 Y <- as.factor(apply(UNIMANshort$C, 1, function(x) LETTERS[which(x != 0)]))
 
-outSplit <- moduleSplit.split(X, Y, 150)
+input <- defaulInput()
+input$X <- X
+input$Y <- Y
+input$methodClass <- "lda"
 
-Xt <- X[outSplit$trainInd, ]
-Yt <- Y[outSplit$trainInd]
+### moduleSplit
+out <- moduleSplit.split(input)
 
-outClass <- moduleClass.train(Xt, Yt)
-
+### moduleClass
+out <- moduleClass.train(out)

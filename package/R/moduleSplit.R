@@ -1,11 +1,17 @@
 
-moduleSplit.split <- function(X, Y, trainSize)
+moduleSplit.split <- function(input)
 {
-  trainInd <- 1:trainSize
-  testInd <- seq(trainSize + 1, nrow(X))
+  ### input
+  stopifnot(all(c("X", "Y", "trainSize") %in% names(input)))
+  
+  ### do splitting
+  trainInd <- 1:input$trainSize
+  testInd <- seq(input$trainSize + 1, nrow(input$X))
   
   ### return output
-  out <- list(trainInd = trainInd, testInd = testInd)
-
-  return(out)
+  output <- list(trainInd = trainInd, testInd = testInd)
+  stopifnot(!any(names(input) %in% names(output)))
+  
+  output <- c(input, output) 
+  return(output)
 }

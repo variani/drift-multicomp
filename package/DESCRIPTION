@@ -1,12 +1,14 @@
-Package: GiveMeANamePlz
+Package: driftout
 Type: Package
-Title: GiveMeATitlePlz
+Title: Package for signal processing of sensor array data under drift
+    conditions.
 Version: 0.1
-Date: 2013-05-07
+Date: 2013-05-10
 Author: Susana Albarracín
-Maintainer: Susana Albarracín <susana@somewhere.com>
-Description: GiveMeADescriptionPlz
-License: GPL (>= 3)
+Maintainer: Susana Albarracín <evsusy@gmail.com>
+Description: Package for signal processing of sensor array data under drift
+    conditions.
+License: GPL (>= 2)
 LazyData: yes
 LazyLoad: yes
 Depends:
@@ -14,5 +16,19 @@ Depends:
     caret,
     plyr,
     ggplot2,
+    chemosensors,
+    reshape,
+    grid,
+    e1071,
+    SparseM
 Suggests:
     doMC
+Collate:
+    'support.lib.R'
+    'moduleClass.R'
+    'moduleSplit.R'
+    'moduleGenXYsanD.R'
+    'moduleGenXYuniS.R'
+    'moduleDrift.R'
+    
+    
