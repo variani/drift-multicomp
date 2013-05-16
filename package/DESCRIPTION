@@ -27,8 +27,7 @@ Collate:
     'support.lib.R'
     'moduleClass.R'
     'moduleSplit.R'
-    'moduleGenXYsanD.R'
-    'moduleGenXYuniS.R'
+    'moduleGenXY.R'
     'moduleDrift.R'
     
     

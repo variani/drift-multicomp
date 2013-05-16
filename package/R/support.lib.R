@@ -13,3 +13,4 @@ defaulInput <- function()
   list(trainSize = 50, methodClass = "knn")
 }  
   
+
