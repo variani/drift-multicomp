@@ -11,19 +11,19 @@ data(iris)
 X <- iris[, 1:2]
 Y <- iris[, 5]
 
-### prepare corr. matrices
+### prepare cov. matrices
 
-# check scaling does not affect corr.
-cor(X)
-cor(scale(X))
+# check scaling affect cov
+cov(X)
+cov(scale(X))
 
 # scale data
 X <- scale(X, center = TRUE, scale = TRUE) # See `attributes(X)`
 
-# compute corr. matricies `C`
+# compute covr. matricies `C`
 names(cbind(X, Y))
 
-C <- daply(data.frame(X, Y), "Y", function(x) cor(x[, -ncol(x)]))
+C <- daply(data.frame(X, Y), "Y", function(x) cov(x[, -ncol(x)]))
 dimnames(C) # order of dimensions is not the same as `djd` requires
 
 C <- aperm(C, c(2, 3, 1)) # put the 1st dimension to the end

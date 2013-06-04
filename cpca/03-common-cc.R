@@ -16,7 +16,7 @@ Y <- iris[, 5]
 X <- scale(X, center = TRUE, scale = TRUE) # See `attributes(X)`
 
 # compute corr. matricies `C`
-C <- daply(data.frame(X, Y), "Y", function(x) cor(x[, -ncol(x)]))
+C <- daply(data.frame(X, Y), "Y", function(x) cov(x[, -ncol(x)]))
 dimnames(C) # order of dimensions is not the same as `djd` requires
 
 C <- aperm(C, c(2, 3, 1)) # put the 1st dimension to the end
